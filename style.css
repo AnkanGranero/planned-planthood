@@ -177,3 +177,26 @@ body {
   background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
 }
+
+
+#blog-posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, auto); 
+}
+.blog-post {
+  background: var(--clr-primary-light-1);
+
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-start;
+    li {
+      background: yellow;
+      margin-right: 0.5rem;
+      border-radius: 10px;
+      padding: 0.5rem;
+    }
+  }
+}
