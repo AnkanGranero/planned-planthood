@@ -14,14 +14,20 @@ blogPosts.forEach((blogPost, index) => {
     ul.className = "tags"
     blogPost.tags.forEach(tag => {
         const li = document.createElement("li");
-        li.textContent = tag;
+        li.textContent = tag.title;
+        li.classList.add(tag.class);
         ul.appendChild(li);
     })
     article.appendChild(ul);
 
+    const section = document.createElement("section");
+    const header = document.createElement("h3");
+    header.textContent = blogPost.title;
+    section.appendChild(header);
     const paragraph = document.createElement("p");
     paragraph.textContent = blogPost.body;
-    article.appendChild(paragraph);
+    section.appendChild(paragraph);
+    article.appendChild(section);
 
 
     const footer = document.createElement("footer");
@@ -30,16 +36,17 @@ blogPosts.forEach((blogPost, index) => {
     userPicture.alt = "user avatar";
     footer.appendChild(userPicture);
 
-    const userInfo = document.createElement("p");
-    const strong = document.createElement("strong");
-    strong.textContent = blogPost.meta.userName;
+    const p = document.createElement("p");
+    const userName = document.createElement("strong");
+    userName.textContent = blogPost.meta.userName;
     const time = document.createElement("time");
-    time.textContent = blogPost.meta.time;
+    time.textContent = blogPost.meta.date;
 
-    userInfo.appendChild(strong)
-    userInfo.appendChild(time)
+    p.appendChild(userName)
+    p.appendChild(time)
     footer.appendChild(userPicture);
-
+    footer.appendChild(p);
+    article.appendChild(footer);
 
     blogPostGrid.appendChild(article)
     

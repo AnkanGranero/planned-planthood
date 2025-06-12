@@ -52,7 +52,7 @@ figcaption {
 }
 
 /* for container queries, landmarks as containers */
-body > :is(header, footer),
+body> :is(header, footer),
 main {
   container-type: inline-size;
 }
@@ -141,7 +141,7 @@ main {
 }
 
 /* Composition */
-.flow > * + * {
+.flow>*+* {
   margin-block-start: var(--flow-space, 1em);
 }
 
@@ -180,23 +180,129 @@ body {
 
 
 #blog-posts {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: repeat(3, auto); 
+  grid-template-columns: repeat(4, 13.3rem);
+  justify-content: center;
+  gap: 1rem;
 }
+
 .blog-post {
+  grid-template-rows: 4fr 1fr 3fr 1fr;
+  font-family: sans-serif;
+  box-shadow: var(--border-shadow);
+
   background: var(--clr-primary-light-1);
+  min-height: 34.5rem;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  box-sizing: border-box;
+
+  img {}
 
   .tags {
+    text-transform: uppercase;
+    font-size: var(--fs-100);
+    font-weight: var(--fw-medium);
+    color: var(--clr-primary-light-1);
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-start;
+
+
     li {
-      background: yellow;
       margin-right: 0.5rem;
-      border-radius: 10px;
-      padding: 0.5rem;
+      border-radius: 15px;
+      padding: 0.3rem 0.4rem;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+
+
     }
   }
+
+  h3 {
+    font-weight: var(--fw-medium);
+    margin-bottom: 1rem;
+
+  }
+
+  p {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary);
+
+
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-start;
+    align-items: center;
+
+
+    >* {
+      font-size: var(--fs-200);
+    }
+
+    strong {
+      display: block;
+      font-weight: var(--fw-semi-bold);
+    }
+
+
+    img {
+      height: 3rem;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+  }
+}
+
+
+.edible {
+  background: var(--clr-edible);
+}
+
+.sunloving {
+  background: var(--clr-sunloving);
+}
+
+.fragrant {
+  background: var(--clr-fragrant);
+}
+
+.colorful {
+  background: var(--clr-colorful);
+}
+
+.robust {
+  background: var(--clr-robust);
+}
+
+.decorative {
+  background: var(--clr-decorative);
+}
+
+.green {
+  background: var(--clr-green);
+}
+
+.flower {
+  background: var(--clr-flower);
+}
+
+.easy {
+  background: var(--clr-easy);
+}
+
+.fast {
+  background: var(--clr-fast);
+}
+
+.air {
+  background: var(--clr-air);
 }
