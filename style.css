@@ -199,7 +199,6 @@ body {
   gap: 1rem;
   box-sizing: border-box;
 
-  img {}
 
   .tags {
     text-transform: uppercase;
@@ -223,19 +222,23 @@ body {
     }
   }
 
-  h3 {
-    font-weight: var(--fw-medium);
-    margin-bottom: 1rem;
+  section {
 
+    h3 {
+      font-weight: var(--fw-medium);
+      margin-bottom: 1rem;
+  
+    }
+  
+    p {
+      font-size: var(--fs-400);
+      font-weight: var(--fw-regular);
+      color: var(--clr-primary);
+  
+  
+    }
   }
 
-  p {
-    font-size: var(--fs-400);
-    font-weight: var(--fw-regular);
-    color: var(--clr-primary);
-
-
-  }
 
   footer {
     display: flex;
