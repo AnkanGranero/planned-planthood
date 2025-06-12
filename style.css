@@ -175,23 +175,30 @@ a {
 li {
   list-style-type: none;
 }
-
+.content-grid, .fullwidth {
+  grid-template-columns: [fullwidth-start] 1fr [content-start] minmax(0, 900px) [content-end] 1fr [fullwidth-end];
+   >* {
+    grid-column: content;
+  }
+}
+.fullwidth {
+  grid-column: fullwidth;
+}
 body {
   font-family: var(--font-base);
   background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
   display: grid;
-  grid-template-columns: [fullwidth-start] 1fr [content-start] minmax(0, 900px) [content-end] 1fr [fullwidth-end];
+ /*  grid-template-columns: [fullwidth-start] 1fr [content-start] minmax(0, 900px) [content-end] 1fr [fullwidth-end];
 
 
   >* {
     grid-column: content;
-  }
+  } */
 
 }
-
 header {
-  grid-column: fullwidth;
+  
   background: white;
   display: grid;
   justify-content: center;
