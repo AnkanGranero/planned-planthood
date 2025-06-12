@@ -7,7 +7,7 @@ blogPosts.forEach((blogPost, index) => {
     article.className = "blog-post"
 
     const img = document.createElement("img");
-    img.src = "https://picsum.photos/180/208";
+    img.src = `https://picsum.photos/id/${index}/180/208`;
     article.appendChild(img);
 
     const ul = document.createElement("ul");
