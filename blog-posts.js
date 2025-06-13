@@ -30,7 +30,8 @@ export const blogPosts = [
     tags: [
       { title: "Dekorativ", class: "decorative" },
       { title: "Färgstark", class: "colorful" },
-      { title: "Tålig", class: "robust" }
+      { title: "Tålig", class: "robust" },
+      {title: "Blommor", class: "flower"},
     ],
     body: "En vacker och lättskött blomma som trivs både inne och ute under sommaren.",
     meta: {
