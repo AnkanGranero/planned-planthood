@@ -54,7 +54,7 @@ figcaption {
 /* for container queries, landmarks as containers */
 body> :is(header, footer),
 main {
-  container-type: inline-size;
+  display: grid;
 }
 
 /* remove list style but keep it as list for Safari browser - use with <ul role="list"> */
@@ -188,6 +188,7 @@ li {
 .fullwidth {
   grid-column: fullwidth;
 }
+
 
 body {
   font-family: var(--font-base);
@@ -405,6 +406,22 @@ header {
     }
   }
 }
+
+.join-the-club {
+  display: grid;
+  background: white;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    background: green;
+    border-radius: 50%;
+  }
+}
+
 
 
 .edible {
