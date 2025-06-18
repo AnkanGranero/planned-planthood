@@ -52,20 +52,20 @@ figcaption {
 }
 
 /* for container queries, landmarks as containers */
-body> :is(header, footer),
+body > :is(header, footer),
 main {
-  container-type: inline-size;
+  display: grid;
 }
 
 /* remove list style but keep it as list for Safari browser - use with <ul role="list"> */
-[role="list"] {
+[role='list'] {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 /* Theme */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
   --clr-neutral-100: hsl(0, 0%, 100%);
@@ -95,7 +95,7 @@ main {
 
   --border-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-  --font-base: "Segoe UI", "Open Sans", Tahoma, sans-serif;
+  --font-base: 'Segoe UI', 'Open Sans', Tahoma, sans-serif;
 
   --fw-400: 400;
   --fw-500: 500;
@@ -141,7 +141,7 @@ main {
 }
 
 /* Composition */
-.flow>*+* {
+.flow > * + * {
   margin-block-start: var(--flow-space, 1em);
 }
 
@@ -179,8 +179,8 @@ li {
 .content-grid,
 .fullwidth {
   grid-template-columns: [fullwidth-start] 1fr [content-start] minmax(0, 900px) [content-end] 1fr [fullwidth-end];
-
-  >* {
+  row-gap: 3rem;
+  > * {
     grid-column: content;
   }
 }
@@ -194,17 +194,14 @@ body {
   background-color: var(--clr-accent-light-1);
   color: var(--clr-primary-dark);
   display: grid;
-
 }
 
 header {
-
   background: var(--clr-primary-light-1);
   display: grid;
   justify-content: center;
 
   nav {
-
     display: flex;
     justify-content: space-between;
     height: 3.6rem;
@@ -227,7 +224,6 @@ header {
       img {
         height: 2.5rem;
       }
-
     }
 
     .navigation-links {
@@ -247,14 +243,12 @@ header {
 }
 
 .appreciated-plants {
-  margin: 3rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  article>* {
+  article > * {
     text-align: center;
-
   }
 
   h2 {
@@ -293,7 +287,6 @@ header {
     }
 
     @media (800px < width) {
-
       > :first-child {
         grid-column: span 2;
         grid-row: span 4;
@@ -301,25 +294,20 @@ header {
 
       :nth-child(2),
       :nth-child(3) {
-
         grid-row: 3;
         grid-column: span 1;
         grid-row: span 2;
-
       }
 
-      :nth-child(n+4):nth-child(-n+6) {
-
+      :nth-child(n + 4):nth-child(-n + 6) {
         grid-column: span 2;
         grid-row: span 2;
-
       }
     }
   }
 }
 
 #blog-posts {
-
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -341,7 +329,6 @@ header {
   gap: 1rem;
   box-sizing: border-box;
 
-
   .tags {
     text-transform: uppercase;
     font-size: var(--fs-100);
@@ -350,7 +337,6 @@ header {
     display: flex;
     flex-wrap: wrap;
 
-
     li {
       margin-right: 0.5rem;
       border-radius: 15px;
@@ -358,36 +344,28 @@ header {
       margin-bottom: 0.25rem;
       display: flex;
       align-items: center;
-
-
     }
   }
 
   section {
-
     h3 {
       font-weight: var(--fw-medium);
       margin-bottom: 1rem;
-
     }
 
     p {
       font-size: var(--fs-400);
       font-weight: var(--fw-regular);
       color: var(--clr-primary);
-
-
     }
   }
-
 
   footer {
     display: flex;
     justify-content: space-start;
     align-items: center;
 
-
-    >* {
+    > * {
       font-size: var(--fs-200);
     }
 
@@ -395,7 +373,6 @@ header {
       display: block;
       font-weight: var(--fw-semi-bold);
     }
-
 
     img {
       height: 3rem;
@@ -406,6 +383,49 @@ header {
   }
 }
 
+.join-the-club {
+  display: grid;
+  background: white;
+
+  .wrapper {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    height: 10rem;
+    h2 {
+      font-size: 1.8rem;
+      font-family: sans-serif;
+      font-weight: var(--fw-semi-bold);
+      letter-spacing: 0.02em;
+      max-width: 20ch;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-right: 3rem;
+      input {
+        margin-top: 1rem;
+        border-radius: 3rem;
+        padding: 1rem;
+        border: 1px solid var(--clr-neutral-900);
+        background: var(--clr-primary-light-1);
+        text-align: center;
+      }
+    }
+    div {
+      border-radius: 50%;
+      background: var(--clr-accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1/1;
+      img {
+        height: 50%;
+        width: 50%;
+      }
+    }
+  }
+}
 
 .edible {
   background: var(--clr-edible);
