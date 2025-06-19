@@ -1,5 +1,4 @@
 import {blogPosts} from "./blog-posts.js";
-console.log(blogPosts);
 
 const blogPostGrid = document.getElementById("blog-posts");
 blogPosts.forEach((blogPost, index) => {
@@ -28,11 +27,11 @@ blogPosts.forEach((blogPost, index) => {
     paragraph.textContent = blogPost.body;
     section.appendChild(paragraph);
     article.appendChild(section);
-
+    document.querySelectorAll('.placeholder').forEach(el => el.remove());
 
     const footer = document.createElement("footer");
     const userPicture = document.createElement("img");
-    userPicture.src = `https://avatar.iran.liara.run/public/${index}`;
+    userPicture.src = `https://i.pravatar.cc/150?u=${index}`;
     userPicture.alt = "user avatar";
     footer.appendChild(userPicture);
 
