@@ -258,7 +258,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-       /*  reset button styling */
+        /*  reset button styling */
         background: none;
         border: none;
         padding: 0;
@@ -500,6 +500,26 @@ header {
         text-align: center;
         h2 {
           max-width: unset;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: grid;
+  padding: 3rem;
+  background: var(--clr-accent);
+  color: var(--clr-accent-light-1);
+  .contact-info {
+    ul {
+      li {
+        >* {
+          display:inline-block;
+        }
+        a {
+          margin-left: 1rem;  
+          color: var(--clr-accent-light-1); 
         }
       }
     }
